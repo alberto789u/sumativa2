@@ -20,7 +20,27 @@ public:
     void cumplirAnios();
     void presentarse();
 };
+int main (){
+  Persona p1;
+  p1.setEdad(18);
+  p1.setEstatura(1.75);
+  p1.setPeso(70);
+  p1.n= "Juan";
+  p1.t= "33456789";
+  Persona p2(20,1.65,65,"Maria","98765432");  
+  vector <Persona> p;
+  p.push_back(p1);
+  p.push_back(p2);
+  for (int i=0; i<p.size(); i++){
+    p[i].presentarse();
+    p[i].cumplirAnios();
+    
+  }
+  for (int i=0; i<p.size(); i++){
+    p[i].presentarse();
 
+  }
+}
 int Persona::getEdad()
 {
     return e;
@@ -47,5 +67,11 @@ void Persona::setPeso(float hr)
 }
 void Persona::cumplirAnios()
 {
-    return e;
+    e++;
+    if (e < 21)est*=1.03;
+    if (e>30)p*=1.03;
+}
+void Persona:: presentarse(){
+
+   cout << "Hola, me llamo " << n << " tengo " << e << " anios "<< "mido " << est << " y peso " << p << " kg" << "mi # de telefono es "<< t << endl;
 }
