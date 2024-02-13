@@ -27,14 +27,14 @@ int main (){
   p1.setPeso(70);
   p1.n= "Juan";
   p1.t= "33456789";
-  Persona p2(20,1.65,65,"Maria","98765432");  
+  Persona p2(20,1.65,65,"Maria","98765432");
   vector <Persona> p;
   p.push_back(p1);
   p.push_back(p2);
   for (int i=0; i<p.size(); i++){
     p[i].presentarse();
     p[i].cumplirAnios();
-    
+
   }
   for (int i=0; i<p.size(); i++){
     p[i].presentarse();
@@ -73,5 +73,21 @@ void Persona::cumplirAnios()
 }
 void Persona:: presentarse(){
 
-   cout << "Hola, me llamo " << n << " tengo " << e << " anios "<< "mido " << est << " y peso " << p << " kg" << "mi # de telefono es "<< t << endl;
+   cout << "Hola, me llamo " << n << " tengo " << e << " anios "<< "mido " << est << " y peso " << p << " kg" << " mi # de telefono es "<< t << endl;
+}
+Persona:: Persona(int er, float estr, float pr, string nr, string tr){
+    e=er;
+    est=estr;
+    p=pr;
+    n=nr;
+    t=tr;
+
+}
+Persona:: Persona(){
+    e=0;
+    est=0;
+    p=0;
+    n="N/A";
+    t="N/A";
+
 }
